@@ -8,7 +8,7 @@ import datetime as dt
 import pathlib
 
 # internal
-from config import app_config
+# from config import app_config
 
 
 from .extensions import db, login_manager, migrate, admin
