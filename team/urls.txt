@@ -1,0 +1,15 @@
+
+
+http://127.0.0.1:5000/admin
+
+
+http://127.0.0.1:5000/load_arch
+
+
+http://127.0.0.1:5000/load_employee_data
+
+
+http://127.0.0.1:5000/load_employees
+
+
+http://127.0.0.1:5000/export
