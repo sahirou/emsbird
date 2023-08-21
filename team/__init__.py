@@ -9,6 +9,7 @@ import pathlib
 
 # internal
 # from config import app_config
+db_uri = "postgresl://rhamana:T13Rb5iH3zXLOuT9gpyabQJoi3IMC0la@dpg-cjhlqdb37aks73d7ago0-a/db_team_f5x6"
 
 
 from .extensions import db, login_manager, migrate, admin
@@ -18,7 +19,7 @@ config_name="development"
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "my-secret-key-#$"
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///db_team.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['DEBUG'] = True
 app.config['SQLALCHEMY_ECHO'] = True
