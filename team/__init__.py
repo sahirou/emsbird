@@ -6,6 +6,7 @@ from flask_admin.contrib.sqla.filters import FilterEqual, FilterLike
 import pandas as pd
 import datetime as dt
 import pathlib
+import os
 
 # internal
 # from config import app_config
@@ -19,7 +20,7 @@ config_name="development"
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "my-secret-key-#$"
-app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['DEBUG'] = True
 app.config['SQLALCHEMY_ECHO'] = True
