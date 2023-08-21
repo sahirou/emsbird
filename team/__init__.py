@@ -7,10 +7,19 @@ import pandas as pd
 import datetime as dt
 import pathlib
 import os
+from sqlalchemy.engine import URL
 
 # internal
 # from config import app_config
-db_uri = "postgresql://rhamana:T13Rb5iH3zXLOuT9gpyabQJoi3IMC0la@dpg-cjhlqdb37aks73d7ago0-a/db_team_f5x6"
+internal_uri_ = 'postgres://rhamana:T13Rb5iH3zXLOuT9gpyabQJoi3IMC0la@dpg-cjhlqdb37aks73d7ago0-a/db_team_f5x6'
+internal_uri = url = URL.create(
+    drivername="postgresql",
+    username="rhamana",
+    password="T13Rb5iH3zXLOuT9gpyabQJoi3IMC0la",
+    host="dpg-cjhlqdb37aks73d7ago0-a",
+    port=5432,
+    database="db_team_f5x6"
+)
 
 
 from .extensions import db, login_manager, migrate, admin
@@ -20,7 +29,7 @@ config_name="development"
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "my-secret-key-#$"
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
+app.config['SQLALCHEMY_DATABASE_URI'] = internal_uri # os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['DEBUG'] = True
 app.config['SQLALCHEMY_ECHO'] = True
