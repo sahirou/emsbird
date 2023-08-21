@@ -20,7 +20,7 @@ config_name="development"
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "my-secret-key-#$"
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['DEBUG'] = True
 app.config['SQLALCHEMY_ECHO'] = True
