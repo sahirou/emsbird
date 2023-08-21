@@ -9,7 +9,7 @@ import pathlib
 
 # internal
 # from config import app_config
-db_uri = "postgresl://rhamana:T13Rb5iH3zXLOuT9gpyabQJoi3IMC0la@dpg-cjhlqdb37aks73d7ago0-a/db_team_f5x6"
+db_uri = "postgresql://rhamana:T13Rb5iH3zXLOuT9gpyabQJoi3IMC0la@dpg-cjhlqdb37aks73d7ago0-a/db_team_f5x6"
 
 
 from .extensions import db, login_manager, migrate, admin
